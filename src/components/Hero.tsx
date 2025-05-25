@@ -1,5 +1,5 @@
 
-import { ArrowDown, Download } from 'lucide-react';
+import { ArrowDown, Download, Sparkles, Code2, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -12,65 +12,148 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Animation */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+      {/* Enhanced Background Animation */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full filter blur-3xl animate-pulse delay-500"></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-20 animate-bounce delay-300">
+          <div className="w-3 h-3 bg-blue-400/60 rounded-full"></div>
+        </div>
+        <div className="absolute top-40 right-32 animate-bounce delay-700">
+          <div className="w-2 h-2 bg-purple-400/60 rounded-full"></div>
+        </div>
+        <div className="absolute bottom-32 left-40 animate-bounce delay-1000">
+          <div className="w-4 h-4 bg-pink-400/60 rounded-full"></div>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
-        <div className="text-center lg:text-left">
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0)`,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
+        <div className="text-center lg:text-left space-y-8">
           <div className="animate-fade-in">
+            {/* Status Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/60 backdrop-blur-sm rounded-full border border-gray-700/50 mb-6">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-sm text-gray-300">Available for opportunities</span>
+            </div>
+
+            {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Hi,<br />
-              I'm <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="block text-white/90">Hi, I'm</span>
+              <span className="block bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 W.A.N. Fernando
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              Undergraduate in BSc Honours in Information Systems Degree
+
+            {/* Role with Icon */}
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+              <Sparkles className="w-6 h-6 text-purple-400" />
+              <p className="text-xl md:text-2xl text-gray-300 font-medium">
+                Information Systems Student
+              </p>
+            </div>
+
+            {/* Enhanced Description */}
+            <p className="text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed">
+              Passionate about creating exceptional digital experiences through 
+              <span className="text-blue-400 font-medium"> web development</span>, 
+              <span className="text-purple-400 font-medium"> UI/UX design</span>, and 
+              <span className="text-pink-400 font-medium"> software quality assurance</span>.
             </p>
-            <p className="text-lg text-gray-400 mb-8 max-w-2xl">
-              Passionate about web development, UI/UX design, and software quality assurance. 
-              I bring ideas to life through clean code and compelling visuals.
-            </p>
+
+            {/* Skill Tags */}
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+              {['React', 'Java', 'UI/UX', 'Testing'].map((skill, index) => (
+                <span 
+                  key={skill}
+                  className="px-3 py-1 bg-gray-800/60 backdrop-blur-sm text-gray-300 rounded-full text-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
                 onClick={scrollToAbout}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group"
               >
-                View My Work
+                <span className="mr-2">View My Work</span>
+                <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </Button>
               <Button 
                 variant="outline" 
-                className="border-gray-600 text-gray-300 hover:bg-gray-700 px-8 py-3 rounded-full transition-all duration-300"
+                className="border-gray-600/50 bg-gray-800/30 backdrop-blur-sm text-gray-300 hover:bg-gray-700/50 hover:border-gray-500 px-8 py-4 rounded-full transition-all duration-300 group"
               >
-                <Download className="mr-2 h-4 w-4" />
+                <Download className="mr-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
                 Download CV
               </Button>
             </div>
           </div>
         </div>
 
+        {/* Enhanced Right Side */}
         <div className="flex justify-center lg:justify-end">
           <div className="relative">
-            <div className="w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full opacity-20 animate-pulse"></div>
-            <div className="absolute inset-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-bold text-white">
-                  WF
+            {/* Animated Background Circle */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full animate-pulse"></div>
+            
+            {/* Main Container */}
+            <div className="relative w-80 h-80 md:w-96 md:h-96">
+              {/* Orbiting Elements */}
+              <div className="absolute inset-8 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-full border border-gray-700/50 flex items-center justify-center">
+                
+                {/* Floating Icons */}
+                <div className="absolute top-4 right-4 animate-bounce delay-300">
+                  <Code2 className="w-6 h-6 text-blue-400" />
                 </div>
-                <p className="text-gray-300 text-sm">Professional Photo</p>
-                <p className="text-gray-400 text-xs">Coming Soon</p>
+                <div className="absolute bottom-4 left-4 animate-bounce delay-700">
+                  <Palette className="w-6 h-6 text-purple-400" />
+                </div>
+                
+                {/* Center Content */}
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-bold text-white shadow-2xl">
+                    WF
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-gray-300 text-sm font-medium">Professional Photo</p>
+                    <p className="text-gray-500 text-xs">Coming Soon</p>
+                    <div className="flex justify-center gap-1 mt-3">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-200"></div>
+                      <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-400"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <button onClick={scrollToAbout} className="text-gray-400 hover:text-white transition-colors">
-          <ArrowDown size={24} />
+      {/* Enhanced Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <button 
+          onClick={scrollToAbout} 
+          className="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+        >
+          <span className="text-xs font-medium">Scroll to explore</span>
+          <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce group-hover:bg-white transition-colors"></div>
+          </div>
         </button>
       </div>
     </section>
