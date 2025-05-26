@@ -104,7 +104,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Enhanced Right Side */}
+        {/* Enhanced Right Side with Profile Picture */}
         <div className="flex justify-center lg:justify-end">
           <div className="relative">
             {/* Animated Background Circle */}
@@ -113,30 +113,23 @@ const Hero = () => {
             {/* Main Container */}
             <div className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Orbiting Elements */}
-              <div className="absolute inset-8 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-full border border-gray-700/50 flex items-center justify-center">
+              <div className="absolute inset-8 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-full border border-gray-700/50 flex items-center justify-center overflow-hidden">
                 
                 {/* Floating Icons */}
-                <div className="absolute top-4 right-4 animate-bounce delay-300">
+                <div className="absolute top-4 right-4 animate-bounce delay-300 z-10">
                   <Code2 className="w-6 h-6 text-blue-400" />
                 </div>
-                <div className="absolute bottom-4 left-4 animate-bounce delay-700">
+                <div className="absolute bottom-4 left-4 animate-bounce delay-700 z-10">
                   <Palette className="w-6 h-6 text-purple-400" />
                 </div>
                 
-                {/* Center Content */}
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-bold text-white shadow-2xl">
-                    WF
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-gray-300 text-sm font-medium">Professional Photo</p>
-                    <p className="text-gray-500 text-xs">Coming Soon</p>
-                    <div className="flex justify-center gap-1 mt-3">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-200"></div>
-                      <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-400"></div>
-                    </div>
-                  </div>
+                {/* Profile Picture */}
+                <div className="w-full h-full flex items-center justify-center">
+                  <img
+                    src="https://i.postimg.cc/rybh4bwh/Whats-App-Image-2025-05-26-at-00-11-50-d6516430.jpg"
+                    alt="W.A.N. Fernando"
+                    className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-gradient-to-r from-blue-400 to-purple-500 shadow-2xl"
+                  />
                 </div>
               </div>
             </div>
