@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,21 +13,44 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      console.log('Sending email with data:', formData);
+      
+      await emailjs.send(
+        'service_hr5o8ck', // Service ID
+        'template_pwzxqyl', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        'hSdoLmsEvW_1iGShd' // Public Key
+      );
+      
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      
+      // Reset form
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Failed to Send Message",
+        description: "There was an error sending your message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -121,6 +145,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                   className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-400"
                   placeholder="Enter your name"
                 />
@@ -137,6 +162,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                   className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-400"
                   placeholder="Enter your email"
                 />
@@ -152,6 +178,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                   rows={5}
                   className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-400 resize-none"
                   placeholder="Tell me about your project or just say hello!"
@@ -160,10 +187,11 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+                disabled={isLoading}
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 <Send className="mr-2 h-4 w-4" />
-                Send Message
+                {isLoading ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
           </div>
