@@ -1,17 +1,15 @@
-
 import { ArrowDown, Download, Sparkles, Code2, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const Hero = () => {
   const scrollToAbout = () => {
     const element = document.getElementById('about');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Enhanced Background Animation */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full filter blur-3xl animate-pulse"></div>
@@ -33,9 +31,9 @@ const Hero = () => {
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }}></div>
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0)`,
+        backgroundSize: '50px 50px'
+      }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
@@ -50,17 +48,13 @@ const Hero = () => {
             {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="block text-white/90">Hi, I'm</span>
-              <span className="block bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                W.A.N. Fernando
-              </span>
+              <span className="block bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">Ashini Fernando</span>
             </h1>
 
             {/* Role with Icon */}
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
               <Sparkles className="w-6 h-6 text-purple-400" />
-              <p className="text-xl md:text-2xl text-gray-300 font-medium">
-                Information Systems Student
-              </p>
+              <p className="text-xl md:text-2xl text-gray-300 font-medium">Undergraduate in BSc honours Information Systems Degree</p>
             </div>
 
             {/* Enhanced Description */}
@@ -73,33 +67,20 @@ const Hero = () => {
 
             {/* Skill Tags */}
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
-              {['React', 'Java', 'UI/UX', 'Testing'].map((skill, index) => (
-                <span 
-                  key={skill}
-                  className="px-3 py-1 bg-gray-800/60 backdrop-blur-sm text-gray-300 rounded-full text-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              {['React', 'Java', 'UI/UX', 'Testing'].map((skill, index) => <span key={skill} className="px-3 py-1 bg-gray-800/60 backdrop-blur-sm text-gray-300 rounded-full text-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
                   {skill}
-                </span>
-              ))}
+                </span>)}
             </div>
 
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                onClick={scrollToAbout}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group"
-              >
+              <Button onClick={scrollToAbout} className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group">
                 <span className="mr-2">View My Work</span>
                 <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </Button>
-              <Button 
-                variant="outline" 
-                className="border-gray-600/50 bg-gray-800/30 backdrop-blur-sm text-gray-300 hover:bg-gray-700/50 hover:border-gray-500 px-8 py-4 rounded-full transition-all duration-300 group"
-              >
-                <Download className="mr-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-                Download CV
-              </Button>
+              
             </div>
           </div>
         </div>
@@ -125,11 +106,7 @@ const Hero = () => {
                 
                 {/* Profile Picture */}
                 <div className="w-full h-full flex items-center justify-center">
-                  <img
-                    src="https://i.postimg.cc/rybh4bwh/Whats-App-Image-2025-05-26-at-00-11-50-d6516430.jpg"
-                    alt="W.A.N. Fernando"
-                    className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-gradient-to-r from-blue-400 to-purple-500 shadow-2xl"
-                  />
+                  <img src="https://i.postimg.cc/rybh4bwh/Whats-App-Image-2025-05-26-at-00-11-50-d6516430.jpg" alt="W.A.N. Fernando" className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-gradient-to-r from-blue-400 to-purple-500 shadow-2xl" />
                 </div>
               </div>
             </div>
@@ -139,18 +116,13 @@ const Hero = () => {
 
       {/* Enhanced Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <button 
-          onClick={scrollToAbout} 
-          className="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors group"
-        >
+        <button onClick={scrollToAbout} className="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors group">
           <span className="text-xs font-medium">Scroll to explore</span>
           <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce group-hover:bg-white transition-colors"></div>
           </div>
         </button>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
