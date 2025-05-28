@@ -34,16 +34,18 @@ const About = () => {
               </div>
               
               <div className="aspect-square bg-gradient-to-br from-blue-400/20 to-purple-500/20 rounded-full p-8 backdrop-blur-sm border border-gray-700/50 relative overflow-hidden">
-                {/* Photo placeholder with enhanced styling */}
-                <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="text-center z-10">
-                    <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-bold text-white shadow-2xl">
-                      WF
-                    </div>
-                    <p className="text-gray-300 font-medium">W.A.N. Fernando</p>
-                    <p className="text-gray-400 text-sm">Information Systems Student</p>
-                    <div className="flex justify-center gap-1 mt-3">
+                {/* Profile photo with circular mask */}
+                <div className="w-full h-full rounded-full overflow-hidden relative">
+                  <img 
+                    src="https://i.postimg.cc/Lsr9nPsC/Whats-App-Image-2025-05-26-at-11-54-17-88a47e4f.jpg"
+                    alt="W.A.N. Fernando - Profile Picture"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-4 left-0 right-0 text-center z-10">
+                    <p className="text-white font-medium text-lg shadow-lg">W.A.N. Fernando</p>
+                    <p className="text-gray-200 text-sm">Information Systems Student</p>
+                    <div className="flex justify-center gap-1 mt-2">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                       <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-200"></div>
                       <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-400"></div>
