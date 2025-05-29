@@ -5,7 +5,7 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: <Code className="w-6 h-6" />,
-      skills: ["HTML", "CSS", "JavaScript", "React"],
+      skills: ["Java", "Python", "JavaScript", "React"],
       color: "from-blue-400 to-blue-600",
       bgColor: "from-blue-500/10 to-blue-600/10"
     },
@@ -33,8 +33,8 @@ const Skills = () => {
   ];
 
   const topSkills = [
-    { name: "HTML", icon: "🌐", level: 90 },
-    { name: "CSS", icon: "🎨", level: 85 },
+    { name: "Java", icon: "☕", level: 85 },
+    { name: "Python", icon: "🐍", level: 80 },
     { name: "JavaScript", icon: "🟨", level: 80 },
     { name: "React", icon: "⚛️", level: 75 },
     { name: "Node.js", icon: "🟢", level: 70 },
