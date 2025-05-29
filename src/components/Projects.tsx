@@ -1,28 +1,48 @@
 
-import { ExternalLink, Github, ShoppingCart, Star, Clock } from 'lucide-react';
+import { ExternalLink, Github, ShoppingCart, Star, Clock, Store } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Projects = () => {
   const projects = [
     {
       title: "Online Book Selling Website",
-      description: "A comprehensive full-stack web application designed for browsing, purchasing, and managing book inventories. Features a modern responsive design, secure user authentication, intuitive shopping cart functionality, and a comprehensive admin panel for inventory management.",
-      role: "Full-Stack Developer",
-      technologies: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "JWT"],
+      description: "A responsive, user-friendly platform for browsing, purchasing, and managing book inventories. Features intuitive navigation, search functionality, and comprehensive inventory management capabilities.",
+      role: "Developer",
+      technologies: ["HTML", "CSS", "JavaScript"],
       features: [
-        "Responsive user interface with modern design",
-        "Secure user authentication & authorization",
-        "Advanced shopping cart & checkout system",
-        "Real-time inventory management",
-        "Advanced search and filtering capabilities",
-        "Payment integration ready architecture"
+        "Responsive user interface design",
+        "Book browsing and search functionality",
+        "User-friendly purchase system",
+        "Inventory management capabilities",
+        "Cross-browser compatibility",
+        "Modern CSS styling and animations"
       ],
       icon: <ShoppingCart className="w-8 h-8" />,
       color: "from-blue-400 to-blue-600",
       status: "Completed",
       statusColor: "from-green-400 to-green-600",
-      duration: "3 months",
+      duration: "2 months",
       featured: true
+    },
+    {
+      title: "E Commerce Website",
+      description: "A responsive, user-friendly platform for browsing, purchasing, and managing inventories. Built with the MERN stack to provide a complete full-stack e-commerce solution with modern functionality.",
+      role: "Developer",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js"],
+      features: [
+        "Full-stack MERN architecture",
+        "Responsive design for all devices",
+        "Product browsing and management",
+        "Shopping cart functionality",
+        "User authentication system",
+        "Real-time inventory management"
+      ],
+      icon: <Store className="w-8 h-8" />,
+      color: "from-purple-400 to-purple-600",
+      status: "Completed",
+      statusColor: "from-green-400 to-green-600",
+      duration: "3 months",
+      featured: false
     }
   ];
 

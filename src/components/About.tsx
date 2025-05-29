@@ -1,4 +1,3 @@
-
 import { GraduationCap, MapPin, Heart, Award, Target } from 'lucide-react';
 
 const About = () => {
@@ -87,7 +86,7 @@ const About = () => {
                   </div>
                   <h3 className="text-lg font-semibold text-white">Location</h3>
                 </div>
-                <p className="text-gray-300">Sri Lanka</p>
+                <p className="text-gray-300">Chilaw, North Western Province, Sri Lanka</p>
               </div>
 
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:transform hover:scale-105">

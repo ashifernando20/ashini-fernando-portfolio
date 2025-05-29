@@ -1,4 +1,3 @@
-
 import { Code, Database, Palette, TestTube, Zap, Globe } from 'lucide-react';
 
 const Skills = () => {
@@ -6,7 +5,7 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: <Code className="w-6 h-6" />,
-      skills: ["Java", "JavaScript", "Python", "MATLAB"],
+      skills: ["HTML", "CSS", "JavaScript", "React"],
       color: "from-blue-400 to-blue-600",
       bgColor: "from-blue-500/10 to-blue-600/10"
     },
@@ -34,14 +33,14 @@ const Skills = () => {
   ];
 
   const topSkills = [
-    { name: "Java", icon: "☕", level: 85 },
+    { name: "HTML", icon: "🌐", level: 90 },
+    { name: "CSS", icon: "🎨", level: 85 },
     { name: "JavaScript", icon: "🟨", level: 80 },
     { name: "React", icon: "⚛️", level: 75 },
     { name: "Node.js", icon: "🟢", level: 70 },
-    { name: "Python", icon: "🐍", level: 65 },
+    { name: "MongoDB", icon: "🍃", level: 65 },
     { name: "UI/UX", icon: "🎨", level: 80 },
-    { name: "Testing", icon: "🧪", level: 75 },
-    { name: "Spring Boot", icon: "🍃", level: 70 }
+    { name: "Testing", icon: "🧪", level: 75 }
   ];
 
   return (
